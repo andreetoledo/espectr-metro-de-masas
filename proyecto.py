@@ -1,10 +1,6 @@
 
-#Fisica 3 Proyecto 1
+#Fisica 3 Proyecto 2
 #Universidad del valle 
-
-#Por: Andree Toledo  18439
-#	  Renato estrada 181899
-
 
 #Imports	
 from numpy import *
@@ -24,11 +20,7 @@ def plot():
 	Positrón =   1.6		9.11
 	Protón =     -1.6		1.67
 	Neutrón =    1.67		1.67
-	Alpha =      3.2		6.64
-	Deuterio =   1.6		3.34
-	Muón =       -1.6		1.88
-	Bosón =      -1.6		1.88
-	Tau =        -1.6		2.76
+
 	
 	""")
 	v = float(input("\tEscribe la velocidad Inicial de la particula m/s (en números):"))
@@ -38,7 +30,7 @@ def plot():
 	m = float(input("\tEscribe la masa de la particula (en números):")) #9.10938291*(10**-31)
 	V = 1*(10**-19)
 	pq =1*(10**-31)
-	E = float(input("\tEscribe la magnitud del campo en N/C:"))
+	E = float(9.2) #esto ya no va
 	l = int(input("\tEn milimetros escribe Longitud de la región (en números):"))
 	t= linspace(0,10,15)
 
