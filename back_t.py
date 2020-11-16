@@ -4,9 +4,9 @@ Hector Aaron Pivaral
 Carné: 19146
 Carne: 19640
 """
-#par1=
-#par2=
-#par3=
+##lista de partículas seleccionadas
+selected=[]
+##
 class particula:
     def __init__(self, name,mass,charge):
         self.name = name
@@ -28,12 +28,21 @@ for part in particulas:
     
 def lista():
     return(nom)
-"""
+
+##crea una lista ´selected´que cambia para cada tres particulas elegidas
 def det(a,b,c):
-    for p in particulas
-        if a=p.name:
-            seleccionaa
-"""
+    nueva=[]
+    for p in particulas:
+        if a==p.name:
+            nueva.append(p)
+        if b==p.name:
+            nueva.append(p)
+        if c==p.name:
+            nueva.append(p)
+    for i in range(3):
+        print(nueva[i].name)
+    selected=nueva## sobreescribe la lista cada vez
+
     
     
         
