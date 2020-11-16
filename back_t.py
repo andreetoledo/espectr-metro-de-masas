@@ -14,8 +14,8 @@ R4=0
 velocidad=0
 B=1e-4
 selected=[]##lista de partículas seleccionadas
-radios[]
-masas[]
+radios=[]
+masas=[]
 ##
 class particula:
     def __init__(self, name,mass,charge):
@@ -72,10 +72,11 @@ def campoE(V):
     if velocidad > 3e08:
         messagebox.showinfo(title="Cuidado", message="La velocidad no puede ser mayor que la velocidad luz. Revise su entrada por favor.")
     print(velocidad)
-    
-#se pueden obtener de los objetos de la lista selected
+"""    
+se pueden obtener de los objetos de la lista selected
 def radios():
 def masas():
+"""
     
 
     
