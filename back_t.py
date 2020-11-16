@@ -1,9 +1,11 @@
 """
 María Paula Valdés
-Hector Aaron Pivaral
+Rene Ventura
+Andree Toledo
 Carné: 19146
-Carne: 19640
+
 """
+velocidad=0
 ##lista de partículas seleccionadas
 selected=[]
 ##
@@ -28,7 +30,15 @@ for part in particulas:
     
 def lista():
     return(nom)
-
+#crear la nueva particula
+def nuevaP(e,p,n):
+    e1=float(e)
+    p1=float(p)
+    n1=float(n)
+    masa=e1*(9.1e-31)+(p1+n1)*(1.67e-27)
+    carga=e1*(-1.06e-19)+p1*(1.06-19)
+    n=particula("Costumizada",masa,carga)
+    selected.append(n)
 ##crea una lista ´selected´que cambia para cada tres particulas elegidas
 def det(a,b,c):
     nueva=[]
@@ -39,11 +49,22 @@ def det(a,b,c):
             nueva.append(p)
         if c==p.name:
             nueva.append(p)
-    for i in range(3):
-        print(nueva[i].name)
+    global selected
     selected=nueva## sobreescribe la lista cada vez
+    
+def pp():## ESTE METODO SE DEBE BORRAR AL FINAL
+    for i in range(len(selected)):
+        print(selected[i].name)
+        
+def campoE(V):
+    global velocidad
+    E=V/2
+    
+    
+    
 
     
+
     
         
     
