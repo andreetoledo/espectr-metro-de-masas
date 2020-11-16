@@ -1,8 +1,8 @@
 """
 María Paula Valdés
-Hector Aaron Pivaral
+Rene Ventura
+Andree Toledo
 Carné: 19146
-Carne: 19640
 """
 from tkinter import *
 from back_t import*
@@ -17,7 +17,6 @@ Bienvenida = Label(raiz,text= "Simulación espectrómetro de masas", font="Times
 Bienvenida.grid(row=0, column=1,columnspan=11)
 ##lista de nombre de las partículas
 P_names= lista()
-
 #voltaje
 Vol= Label(raiz,text= "Voltaje (V): ", font="Times 12")
 Vol.grid(row=1, column=1)
@@ -26,11 +25,11 @@ volt.grid(row=2,column=1)
 #realización de los combobox de selección
 Selec = Label(raiz,text= "Seleccione las partículas que desee:", font="Times 12")
 Selec.grid(row=3, column=1)
-combo_1 = ttk.Combobox(raiz,foreground ="green",values=P_names)
+combo_1 = ttk.Combobox(raiz,values=P_names)
 combo_1.grid(row=4,column=1)
-combo_2 = ttk.Combobox(raiz,foreground ="green",values=P_names)
+combo_2 = ttk.Combobox(raiz,values=P_names)
 combo_2.grid(row=6,column=1)
-combo_3 = ttk.Combobox(raiz,foreground ="green", values=P_names)
+combo_3 = ttk.Combobox(raiz,values=P_names)
 combo_3.grid(row=8,column=1)
 #nueva partícula
 Nueva = Label(raiz,text= "Complete los datos para la partícula \n que desee introducir:", font="Times 12")
@@ -48,16 +47,19 @@ m3= Label(raiz,F,background="lightblue",text= "Electrones de partícula:", font=
 m3.grid(row=6, column=10, columnspan=2)
 Elec= Entry(raiz,F,width=14, font= "Cambria 12")
 Elec.grid(row=7,column=10)
-#Obtener los valores
+#Obtener los valores de las partículas predeterminadas elegidad
 def obtener():
-    a=combo_1.get()
-    b=combo_2.get()
-    c=combo_3.get()
-    det(a,b,c)
+    det(combo_1.get(),combo_2.get(),combo_3.get())
+    nuevaP(Prot.get(),Elec.get(),Neu.get())
+    
+    pp()#solo comprueba que si esten las particulas "SE TIENE QUE  BORRAR DESPUÉS"
+## Obtener los valores para la partícula personalizadas
 
 ## Botones para realizar la simulacion
 aceptar = Button(raiz,text="Mostrar simulacion",font="Cambria 12",command=obtener)
 aceptar.grid(row=8, column=5)
+alert=Label(raiz,text= "Tamaño de placa \n predeterminado : 2m", font="Times 10")
+alert.grid(row=8, column=10)
 
   
 
