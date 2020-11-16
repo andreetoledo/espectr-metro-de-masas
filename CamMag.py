@@ -51,14 +51,14 @@ Elec.grid(row=7,column=10)
 def obtener():
     det(combo_1.get(),combo_2.get(),combo_3.get())
     nuevaP(Prot.get(),Elec.get(),Neu.get())
-    
+    campoE(volt.get())
     pp()#solo comprueba que si esten las particulas "SE TIENE QUE  BORRAR DESPUÉS"
 ## Obtener los valores para la partícula personalizadas
 
 ## Botones para realizar la simulacion
 aceptar = Button(raiz,text="Mostrar simulacion",font="Cambria 12",command=obtener)
 aceptar.grid(row=8, column=5)
-alert=Label(raiz,text= "Tamaño de placa \n predeterminado : 2m", font="Times 10")
+alert=Label(raiz,text= "Tamaño de placa \n predeterminado : 2m \n B= 1 Gauss", font="Times 10")
 alert.grid(row=8, column=10)
 
   
