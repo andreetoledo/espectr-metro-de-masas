@@ -3,11 +3,19 @@ María Paula Valdés
 Rene Ventura
 Andree Toledo
 Carné: 19146
-
+El valor del campo magnetico:1Gauss--1e-04 Teslas
 """
+from tkinter import messagebox
+
+R1=0
+R2=0
+R3=0
+R4=0
 velocidad=0
-##lista de partículas seleccionadas
-selected=[]
+B=1e-4
+selected=[]##lista de partículas seleccionadas
+radios[]
+masas[]
 ##
 class particula:
     def __init__(self, name,mass,charge):
@@ -58,9 +66,16 @@ def pp():## ESTE METODO SE DEBE BORRAR AL FINAL
         
 def campoE(V):
     global velocidad
-    E=V/2
+    J= float(V)
+    E=J/2
+    velocidad=E/B
+    if velocidad > 3e08:
+        messagebox.showinfo(title="Cuidado", message="La velocidad no puede ser mayor que la velocidad luz. Revise su entrada por favor.")
+    print(velocidad)
     
-    
+#se pueden obtener de los objetos de la lista selected
+def radios():
+def masas():
     
 
     
