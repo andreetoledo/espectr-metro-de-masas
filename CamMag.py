@@ -49,10 +49,14 @@ m3.grid(row=6, column=10, columnspan=2)
 Elec= Entry(raiz,F,width=14, font= "Cambria 12")
 Elec.grid(row=7,column=10)
 #Obtener los valores
-####def obtener():
+def obtener():
+    a=combo_1.get()
+    b=combo_2.get()
+    c=combo_3.get()
+    det(a,b,c)
 
 ## Botones para realizar la simulacion
-aceptar = Button(raiz,text="Mostrar simulacion",font="Cambria 12")
+aceptar = Button(raiz,text="Mostrar simulacion",font="Cambria 12",command=obtener)
 aceptar.grid(row=8, column=5)
 
   
