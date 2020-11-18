@@ -1,7 +1,7 @@
 """
 María Paula Valdés
 Rene Ventura
-Andree Toledo
+Andree Toledo 18439
 Carné: 19146
 El valor del campo magnetico:1Gauss--1e-04 Teslas
 """
@@ -13,10 +13,12 @@ R3=0
 R4=0
 velocidad=0
 B=1e-4
-selected=[]##lista de partículas seleccionadas
+selected=[]#lista de partículas seleccionadas
 radios=[]
 masas=[]
-##
+
+#
+
 class particula:
     def __init__(self, name,mass,charge):
         self.name = name
@@ -31,13 +33,17 @@ nucleoD= particula("Núcleo de Deuterio",3.34E-27,1.602E-19)
 nucleoC= particula("Núcleo de Calcio",6.68E-26,6.408E-18)
 nucleoH= particula("Núcleo de Hierro",9.352E-26,4.1652E-18)
 Tau=particula("Tau", 3.16E-27,-1.6E-19)
+
 particulas=[electron,proton,neutron,particula_alfa,nucleoD,nucleoC,nucleoH,Tau]
+
 nom=[]
+
 for part in particulas:
     nom.append(part.name)
     
 def lista():
     return(nom)
+
 #crear la nueva particula
 def nuevaP(e,p,n):
     e1=float(e)
@@ -47,6 +53,7 @@ def nuevaP(e,p,n):
     carga=e1*(-1.06e-19)+p1*(1.06-19)
     n=particula("Costumizada",masa,carga)
     selected.append(n)
+
 ##crea una lista ´selected´que cambia para cada tres particulas elegidas
 def det(a,b,c):
     nueva=[]
