@@ -6,6 +6,10 @@ Carné: 19146
 El valor del campo magnetico:1Gauss--1e-04 Teslas
 """
 from tkinter import messagebox
+from numpy import *
+import math
+import time
+import matplotlib.pyplot as plt
 
 R1=0
 R2=0
@@ -27,7 +31,7 @@ class particula:
         
 electron = particula("Electrón",1.673E-27,1.6E-19)
 proton=particula("Protón",1.673E-27,1.6E-19)
-neutron=particula("Neutron",1.675E-27,0)
+neutron=particula("Neutron",1.675E-27,2E-22)
 particula_alfa=particula("Partícula Alfa",6.64E-27,3.2E-19)
 nucleoD= particula("Núcleo de Deuterio",3.34E-27,1.602E-19)
 nucleoC= particula("Núcleo de Calcio",6.68E-26,6.408E-18)
@@ -78,17 +82,41 @@ def campoE(V):
     velocidad=E/B
     if velocidad > 3e08:
         messagebox.showinfo(title="Cuidado", message="La velocidad no puede ser mayor que la velocidad luz. Revise su entrada por favor.")
-    print(velocidad)
-"""    
+    ##print(velocidad)
+
+##Función de graficar 
+def graph():
+    ##R = (selected[0].mass*velocidad)/(selected[0].charge*B)
+
+    ##Variable de tiempo, es un array
+    t= linspace(0,10,15)
+
+    Rs = [R1, R2, R3, R4]
+    
+    ##Por cada particula, se operan los cosenos y senos de la velocidad * el valor de tiempo
+    ## y se multiplican por la respectiva R de la particula, luego se hace una grafica
+    for i in range(0, len(selected)):
+        print(selected[i].name)
+        print(selected[i].mass)
+        print(selected[i].charge)
+        print("\n")
+        R = (selected[i].mass*velocidad)/(selected[i].charge*B)
+        print(R)
+        cosvals = []
+        sinvals = []
+        for val in t:
+            cosvals.append(R * math.cos(velocidad*val))
+            sinvals.append(R * math.sin(velocidad*val))
+        plt.plot(cosvals, sinvals, label="Particula " + str(i))
+        
+    plt.ylabel('y (m)')
+    plt.xlabel('x (m)')
+    plt.title('Trayectoria')
+    plt.show()
+
+
+    """    
 se pueden obtener de los objetos de la lista selected
 def radios():
 def masas():
 """
-    
-
-    
-
-    
-        
-    
-    
