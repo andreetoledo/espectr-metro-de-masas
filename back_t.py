@@ -31,14 +31,14 @@ class particula:
         
 electron = particula("Electrón",1.673E-27,1.6E-19)
 proton=particula("Protón",1.673E-27,1.6E-19)
-neutron=particula("Neutron",1.675E-27,2E-22)
+nucleoS=particula("Núcleo de Sodio",3.679e-27,3.52e-19)
 particula_alfa=particula("Partícula Alfa",6.64E-27,3.2E-19)
 nucleoD= particula("Núcleo de Deuterio",3.34E-27,1.602E-19)
 nucleoC= particula("Núcleo de Calcio",6.68E-26,6.408E-18)
 nucleoH= particula("Núcleo de Hierro",9.352E-26,4.1652E-18)
 Tau=particula("Tau", 3.16E-27,-1.6E-19)
 
-particulas=[electron,proton,neutron,particula_alfa,nucleoD,nucleoC,nucleoH,Tau]
+particulas=[electron,proton,nucleoS,particula_alfa,nucleoD,nucleoC,nucleoH,Tau]
 
 nom=[]
 
@@ -114,9 +114,3 @@ def graph():
     plt.title('Trayectoria')
     plt.show()
 
-
-    """    
-se pueden obtener de los objetos de la lista selected
-def radios():
-def masas():
-"""
