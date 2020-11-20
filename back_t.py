@@ -107,7 +107,7 @@ def graph():
         for val in t:
             cosvals.append(R * math.cos(velocidad*val))
             sinvals.append(R * math.sin(velocidad*val))
-        plt.plot(cosvals, sinvals, label="Particula " + str(i))
+            plt.plot(cosvals, sinvals, label="Particula " + str(i))
         
     plt.ylabel('y (m)')
     plt.xlabel('x (m)')
