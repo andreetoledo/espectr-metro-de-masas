@@ -84,15 +84,15 @@ def campoE(V):
         messagebox.showinfo(title="Cuidado", message="La velocidad no puede ser mayor que la velocidad luz. Revise su entrada por favor.")
     ##print(velocidad)
 
+
 ##Función de graficar 
 def graph():
-    ##R = (selected[0].mass*velocidad)/(selected[0].charge*B)
-
-    ##Variable de tiempo, es un array
-    t= linspace(0,10,15)
-
+    i=0
+    colors=['g.','b.','r.','c','m','y','k']
+    plt.axes(projection = 'polar')
     Rs = [R1, R2, R3, R4]
-    
+    lr=[]
+    rads = np.arange(0, (np.pi/2), 0.01) 
     ##Por cada particula, se operan los cosenos y senos de la velocidad * el valor de tiempo
     ## y se multiplican por la respectiva R de la particula, luego se hace una grafica
     for i in range(0, len(selected)):
@@ -101,16 +101,14 @@ def graph():
         print(selected[i].charge)
         print("\n")
         R = (selected[i].mass*velocidad)/(selected[i].charge*B)
-        print(R)
-        cosvals = []
-        sinvals = []
-        for val in t:
-            cosvals.append(R * math.cos(velocidad*val))
-            sinvals.append(R * math.sin(velocidad*val))
-            plt.plot(cosvals, sinvals, label="Particula " + str(i))
+        print("Radio"+str(R))
+        lr.append(R)
+  
+    for rad in rads:
+        for r in lr:
+            plt.polar(rad, 2*r*math.cos(rad), 'g')
+          
+          
         
-    plt.ylabel('y (m)')
-    plt.xlabel('x (m)')
-    plt.title('Trayectoria')
-    plt.show()
+    plt.show() 
 
