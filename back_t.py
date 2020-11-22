@@ -90,7 +90,7 @@ def campoE(V):
 ##Función de graficar 
 def graph():
     i=0
-    colors=['g.','b.','r.','c','m','y','k']
+    colors=["g.",'b.','r.','y.']
     plt.axes(projection = 'polar')
     Rs = [R1, R2, R3, R4]
     lr=[]
@@ -105,11 +105,15 @@ def graph():
         R = (selected[i].mass*velocidad)/(selected[i].charge*B)
         print("Radio"+str(R))
         lr.append(R)
-  
-    for rad in rads:
-        for r in lr:
-            plt.polar(rad, 2*r*(math.cos(rad)), 'g.')
-          
         
+        for rad in rads:
+            for r in lr:
+                plt.polar(rad, 2*r*(math.cos(rad)),"b.")
+        
+          
+    plt.legend(labels=(selected[0].name+" = "+str(lr[0]),
+                       selected[1].name+" = "+str(lr[1]),
+                       selected[2].name+" = "+str(lr[2]),
+                       selected[3].name+" = "+str(lr[3])),loc=1)
     plt.show() 
 
