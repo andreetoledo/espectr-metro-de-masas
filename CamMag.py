@@ -67,7 +67,7 @@ Elec.grid(row=7,column=10)
 #Obtener los valores de las partículas predeterminadas elegidad
 def obtener():
     det(combo_1.get(),combo_2.get(),combo_3.get())
-    nuevaP(Prot.get(),Elec.get(),Neu.get())
+    nuevaP(Elec.get(),Prot.get(),Neu.get())
     campoE(volt.get())
     ##pp()#solo comprueba que si esten las particulas "SE TIENE QUE  BORRAR DESPUÉS"
 
