@@ -6,6 +6,7 @@ Carné: 19146
 El valor del campo magnetico:1Gauss--1e-04 Teslas
 """
 from tkinter import messagebox
+import numpy as np
 from numpy import *
 import math
 import time
@@ -36,7 +37,7 @@ particula_alfa=particula("Partícula Alfa",6.64E-27,3.2E-19)
 nucleoD= particula("Núcleo de Deuterio",3.34E-27,1.602E-19)
 nucleoC= particula("Núcleo de Calcio",6.68E-26,6.408E-18)
 nucleoH= particula("Núcleo de Hierro",9.352E-26,4.1652E-18)
-Tau=particula("Tau", 3.16E-27,-1.6E-19)
+Tau=particula("Tau", 3.16E-27,1.6E-19)
 
 particulas=[electron,proton,nucleoS,particula_alfa,nucleoD,nucleoC,nucleoH,Tau]
 
@@ -55,6 +56,7 @@ def nuevaP(e,p,n):
     n1=float(n)
     masa=e1*(9.1e-31)+(p1+n1)*(1.67e-27)
     carga=e1*(-1.06e-19)+p1*(1.06-19)
+    print(carga)
     n=particula("Costumizada",masa,carga)
     selected.append(n)
 
@@ -106,8 +108,7 @@ def graph():
   
     for rad in rads:
         for r in lr:
-            plt.polar(rad, 2*r*math.cos(rad), 'g')
-          
+            plt.polar(rad, 2*r*(math.cos(rad)), 'g.')
           
         
     plt.show() 
