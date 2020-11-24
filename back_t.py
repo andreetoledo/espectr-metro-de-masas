@@ -90,8 +90,12 @@ def graph():
     for i in range(0, len(selected)):
         R = (selected[i].mass*velocidad)/(selected[i].charge*B)
         R1= trunc(R*100)/100
-        plt.polar(-rads,2*np.abs(R1)*(np.sin(rads)),label=selected[i].name+" = "+str(np.abs(R1))+"m")
-        plt.legend()
+        if R<0:
+            plt.polar(rads,2*np.abs(R1)*(np.sin(rads)),label=selected[i].name+" = "+str(np.abs(R1))+"m")
+            plt.legend()
+        else:
+            plt.polar(-rads,2*np.abs(R1)*(np.sin(rads)),label=selected[i].name+" = "+str(np.abs(R1))+"m")
+            plt.legend()
     plt.title("Simulación de espectrómetro de masas", color="green",loc="left")
     plt.show() 
 
