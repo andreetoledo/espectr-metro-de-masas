@@ -82,6 +82,4 @@ aceptar.grid(row=8, column=5)
 alert=Label(raiz,text= "Tamaño de placa \n predeterminado : 2m \n B= 1 Gauss", font="Times 10")
 alert.grid(row=8, column=10)
 
-
-
 raiz.mainloop()
