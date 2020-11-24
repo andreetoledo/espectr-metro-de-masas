@@ -92,11 +92,12 @@ def graph():
         R1= trunc(R*100)/100
     
         if R<0:
-            plt.polar(-rads,2*np.abs(R1)*(np.sin(rads)),label=selected[i].name+" = "+str(np.abs(R1))+"m")
-            plt.legend()
-        else:
             plt.polar(rads,2*np.abs(R1)*(np.sin(rads)),label=selected[i].name+" = "+str(np.abs(R1))+"m")
             plt.legend()
+        else:
+            plt.polar(-rads,2*np.abs(R1)*(np.sin(rads)),label=selected[i].name+" = "+str(np.abs(R1))+"m")
+            plt.legend()
+            
     plt.title("Simulación de espectrómetro de masas", color="green",loc="left")
     plt.show() 
 
