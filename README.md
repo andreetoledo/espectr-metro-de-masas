@@ -1,4 +1,4 @@
-# Espectrómetro de Masas 📦
+# Espectrómetro de Masas 👩🏻‍💻🧲
 PROYECTO FINAL DE LABORATORIO
 
 # Requisitos 
